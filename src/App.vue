@@ -101,14 +101,16 @@ export default {
       if (!this.product.id) {
         /* eslint no-unused-vars: ["error", { "args": "none" }] */
         Product.save(this.product).then(response => {
-          this.product = {}
+          this.product = { }
           this.read()
+
           this.$notify({
             group: 'foo',
             title: 'Important message',
             text: response.data.message,
             type: 'success'
           })
+
         }).catch(e => {
           this.$notify({
             group: 'foo',
@@ -119,14 +121,16 @@ export default {
         })
       } else {
         Product.update(this.product).then(response => {
-          this.product = {}
+          this.product = { }
           this.read()
+
           this.$notify({
             group: 'foo',
             title: 'Important message',
             text: response.data.message,
             type: 'success'
           })
+
         }).catch(e => {
           this.$notify({
             group: 'foo',
